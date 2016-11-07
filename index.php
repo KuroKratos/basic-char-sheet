@@ -73,7 +73,9 @@
 
           <!-- CHARACTER DENOMINATION -->
           <div class="panel-heading">
-            <h3 class="panel-title"><?= $name ?> <small><?= $race ?> <?= $class ?> de niveau <?= $level ?></small></h3>
+            <h3 id="denomination" class="panel-title pull-left"><?= $name ?> <small><?= $race ?> <?= $class ?> de niveau <?= $level ?></small></h3>
+            <button id="btn-refresh" class="btn btn-sm btn-primary pull-right"><span class="glyphicon glyphicon-refresh"></span></button>
+            <div style="clear: both"></div>
           </div>
 
           <div class="panel-body">
@@ -252,6 +254,21 @@
           url: 'roll.php',
           success: function(html){
             $('#histo').append(html);
+          },
+          error: function(e, d, l){
+            console.log(e);
+          }
+        });
+      });
+
+      $('#btn-refresh').click(function(){
+        $.ajax({
+          data: {
+          },
+          type: "POST",
+          url: 'char_info.php',
+          success: function(data){
+            $('#denomination').html(data.name + ' <small>' + data.race + ' ' + data.class + '</small>');
           },
           error: function(e, d, l){
             console.log(e);
