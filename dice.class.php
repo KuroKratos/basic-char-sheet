@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 
 class Dice {
 
-  public static function roll($diceString, $name = "", $mod = 0, $type = "") {
+  public static function roll($diceString, $name = "", $mod = 0, $type = "", $disp_mod = false) {
     $availableDices = [4,6,8,10,12,20,100];
 
     $rolls = explode('D', strtoupper($diceString))[0];
@@ -21,14 +21,15 @@ class Dice {
       for( $i = 0 ; $i < $rolls ; $i++ ) {
         $roll = rand(1, $dice);
         $total += $roll;
-        if($roll > $dice/2) { $rollDetail .= "<span style='color:green'>"; }
-        else if($roll < $dice/2) { $rollDetail .= "<span style='color:red'>"; }
-        else { $rollDetail .= "<span style='color:blue'>"; }
+        if($roll > $dice/2 && $disp_mod == 'true') { $rollDetail .= "<span style='color:green'>"; }
+        else if($roll < $dice/2 && $disp_mod == 'true') { $rollDetail .= "<span style='color:red'>"; }
+        else if ($disp_mod == 'true'){ $rollDetail .= "<span style='color:blue'>"; }
+        else { $rollDetail .= "<span>"; }
         $rollDetail .= "<b>$roll</b></span> + ";
 
       }
 
-      if(isset($mod)) {
+      if(isset($mod) && $disp_mod == 'true') {
         $tmp = trim(trim($rollDetail),'+');
         $tmp .= ($mod < 0 ? ' - ' : ' + ')."<b>".abs($mod)." </b>  ";
         $rollDetail = $tmp;
@@ -39,15 +40,20 @@ class Dice {
         echo "Jet de $rolls dé$s_rolls à $dice face$s_faces : ";
         echo trim(trim($rollDetail), '+') ."= ".$total."<br>";
       } else {
-        if($total < $dice/2) {
-          $class = "label-danger";
-        } else if($total > $dice/2) {
-          $class = "label-success";
+        if($disp_mod == 'true') {
+          if($total < $dice/2) {
+            $class = "label-danger";
+          } else if($total > $dice/2) {
+            $class = "label-success";
+          } else {
+            $class = "label-primary";
+          }
+          echo "$type (<b>$name</b>) : ";
+          echo trim(trim($rollDetail), '+') ."= <span class='label $class' style='border-radius: 1em;'>".$total."</span><br>";
         } else {
-          $class = "label-primary";
+          echo "$type (<b>$name</b>) : ";
+          echo "<b>".$total."</b><br>";
         }
-        echo "Jet de $type pour <b>$name</b> : ";
-        echo trim(trim($rollDetail), '+') ."= <span class='label $class' style='border-radius: 1em;'>".$total."</span><br>";
       }
 
 
