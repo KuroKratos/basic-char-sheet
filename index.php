@@ -239,7 +239,7 @@ function roll (label, dice, type = 0, disp_mod = false) {
       disp_mod: disp_mod
     },
     type: "POST",
-    url: 'roll.php',
+    url: 'scripts/roll.php',
     success: function(html){
       $('#histo').append(html);
     },
@@ -252,6 +252,11 @@ function roll (label, dice, type = 0, disp_mod = false) {
 /*#######################################################################################################################*/
 $(document).ready(function () {
   refreshChar();
+
+  window.setInterval(function(){
+    refreshChar();
+  }, 5000);
+
 });
 
 /*#######################################################################################################################*/
@@ -264,7 +269,7 @@ function refreshChar() {
   $.ajax({
     data: {char:'<?= $_GET['char'] ?>'},
     type: "POST",
-    url: 'char_info.php',
+    url: 'scripts/char_info.php',
     success: function(data){
 
       $('#name').html(data.name);
