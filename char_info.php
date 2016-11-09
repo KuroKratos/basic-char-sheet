@@ -60,7 +60,7 @@ class character {
               char_current_mp mp,
               char_max_mp max_mp,
               char_gold gold,
-              char_str_mod `for`,
+              char_str_mod `str`,
               char_psy_mod psy,
               char_luk_mod luk,
               char_def_mod def,
@@ -84,7 +84,7 @@ class character {
 
 }
 
-$data = character::get(['name' => 'Kratos']);
+$data = character::get(['name' => $_POST['char']]);
 
 header('Content-Type: application/json');
 echo json_encode($data);
