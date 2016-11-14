@@ -1,13 +1,21 @@
+<?php
+  error_reporting(E_ALL);
+  ini_set('display_errors', 1);
+
+  require_once('./classes/db.class.php');
+  require_once('./classes/character.class.php');
+  require_once('./classes/dice.class.php');
+?>
 <!DOCTYPE html>
 <html style="margin:0; padding:0;">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>J - D20 - R</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 
     <!-- Website Font style -->
-	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	    <link rel="stylesheet" href="assets/font_awesome/css/font-awesome.min.css">
 
 		<!-- Google Fonts -->
 		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
@@ -65,6 +73,8 @@
         if(!empty($char)) {
           require_once 'scripts/char_sheet.php';
           require_once 'scripts/log_panel.php';
+        } else if(isset($_GET['p']) && file_exists('scripts/'.$_GET['p'].'.php')) {
+          require_once 'scripts/'.$_GET['p'].'.php';
         } else {
           require_once 'scripts/login.php';
         }
