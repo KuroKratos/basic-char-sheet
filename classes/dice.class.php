@@ -1,8 +1,4 @@
 <?php
-
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 class Dice {
 
   public static function roll($diceString, $name = "", $mod = 0, $type = "", $disp_mod = false) {
