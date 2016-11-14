@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mar 08 Novembre 2016 à 16:16
+-- Généré le :  Lun 14 Novembre 2016 à 15:24
 -- Version du serveur :  5.7.16-0ubuntu0.16.04.1
 -- Version de PHP :  7.0.8-0ubuntu0.16.04.3
 
@@ -51,7 +51,8 @@ CREATE TABLE `character` (
 --
 
 INSERT INTO `character` (`char_id`, `char_name`, `char_sex`, `char_race`, `char_class`, `char_level`, `char_current_exp`, `char_max_exp`, `char_current_hp`, `char_max_hp`, `char_current_mp`, `char_max_mp`, `char_gold`, `char_str_mod`, `char_psy_mod`, `char_luk_mod`, `char_def_mod`) VALUES
-(1, 'Kratos', 0, 1, 3, 1, 0, 200, 5, 5, 5, 5, 0, 0, 0, 0, 0);
+(1, 'Kratos', 0, 1, 3, 1, 0, 200, 6, 6, 4, 5, 10, 0, 0, 0, 0),
+(2, 'Risa', 1, 3, 8, 4, 120, 400, 8, 9, 5, 5, 13, 2, -1, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -141,7 +142,7 @@ ALTER TABLE `race`
 -- AUTO_INCREMENT pour la table `character`
 --
 ALTER TABLE `character`
-  MODIFY `char_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `char_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `class`
 --
