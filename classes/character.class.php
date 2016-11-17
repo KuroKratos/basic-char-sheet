@@ -1,6 +1,16 @@
 <?php
 class character {
 
+  public static function add($name, $password, $sex, $race, $class) {
+    $sql = "INSERT INTO character (char_name, char_password, char_sex, char_race, char_class)"
+            . "VALUES ("
+            . mysqli::escape_string($name) . ","
+            . mysqli::escape_string(md5($password)) . ","
+            . mysqli::escape_string($sex) . ","
+            . mysqli::escape_string($race) . ","
+            . mysqli::escape_string($class) . ")";
+  }
+
   public static function get ($data) {
 
     $return = [];
