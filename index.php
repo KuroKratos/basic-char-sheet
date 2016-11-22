@@ -6,6 +6,7 @@
   require_once('./classes/character.class.php');
   require_once('./classes/dice.class.php');
 ?>
+
 <!DOCTYPE html>
 <html style="margin:0; padding:0;">
   <head>
@@ -15,11 +16,11 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 
     <!-- Website Font style -->
-	    <link rel="stylesheet" href="assets/font_awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/font_awesome/css/font-awesome.min.css">
 
-		<!-- Google Fonts -->
-		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 
     <style type="text/css">
       ::-webkit-scrollbar {
@@ -55,6 +56,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
 
   </head>
+
   <body style="height: 100%; margin:0; padding:0;">
 
     <div class="page-header">
@@ -65,8 +67,6 @@
     </div>
 
     <div class="container">
-
-
       <?php
         $char = $_GET['char'] ?? null;
 
@@ -79,8 +79,8 @@
           require_once 'scripts/login.php';
         }
       ?>
-
     </div><!-- CONTAINER -->
 
   </body>
+
 </html>
