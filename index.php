@@ -1,6 +1,7 @@
 <?php
-  error_reporting(E_ALL);
-  ini_set('display_errors', 1);
+
+  //error_reporting(E_ALL);
+  //ini_set('display_errors', 1);
 
   require_once('./classes/db.class.php');
   require_once('./classes/character.class.php');
