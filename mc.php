@@ -65,16 +65,14 @@
       <div class="row" style="margin-top: 15px">
 
         <!-- CHARACTER SHEET -->
-        <div class="col-md-5">
+        <div class="col-xs-12 col-sm-6 col-md-4">
           <div class="panel panel-default">
 
             <div class="panel-heading">
-              <h3 class="panel-title pull-left">Kratos</h3>
+              <h3 class="panel-title pull-left">Samurox</h3>
               <span class="badge badge-primary pull-right">Nv. 2</span>
               <div style="clear: both"></div>
             </div><!-- PANEL HEADING -->
-
-            
 
             <div class="panel-body">
 
@@ -119,28 +117,124 @@
               <div class="row">
 
                 <!-- HEALTH POINTS AND BAR -->
-                <div class="col-xs-6" style="text-align: center;">
-                  <span class="label label-primary">-</span> PV : 0/0 <span class="label label-primary">+</span>
-                  <div class="progress" style="margin-top: 3px; margin-bottom: 0;">
+                <div class="col-xs-6" style="text-align: left;">
+                  <b>Points de Vie</b>
+                  <div class="progress" style="margin-bottom: 5px;">
                     <div class="progress-bar progress-bar-success" role="progressbar" style="width:70%">
                     </div>
                   </div>
+                  <div class="text-center">
+                  <button class="btn btn-xs pull-left"><span class="glyphicon glyphicon-minus"></span></button>
+                  10/10
+                  <button class="btn btn-xs pull-right"><span class="glyphicon glyphicon-plus"></span></button>
+                  </div>
                 </div><!-- /HEALTH POINTS AND BAR -->
 
-                <!-- PSY POINTS AND BAR -->
-                <div class="col-xs-6" style="text-align: center;">
-                  <span class="badge">-</span> PP : 0/0 <span class="badge">+</span>
-                  <div class="progress" style="margin-top: 3px; margin-bottom: 0;">
-                    <div class="progress-bar progress-bar-info" role="progressbar" style="width:70%">
+                <!-- HEALTH POINTS AND BAR -->
+                <div class="col-xs-6" style="text-align: left;">
+                  <b>Points de Psy</b>
+                  <div class="progress" style="margin-bottom: 5px;">
+                    <div class="progress-bar progress-bar-primary" role="progressbar" style="width:70%">
                     </div>
                   </div>
-                </div><!-- /PSY POINTS AND BAR -->
+                  <div class="text-center">
+                  <button class="btn btn-xs pull-left"><span class="glyphicon glyphicon-minus"></span></button>
+                  10/10
+                  <button class="btn btn-xs pull-right"><span class="glyphicon glyphicon-plus"></span></button>
+                  </div>
+                </div><!-- /HEALTH POINTS AND BAR -->
 
               </div><!-- /ROW HEALTH AND PSY POINTS -->
 
             </div><!-- PANEL BODY -->
 
-            
+          </div><!-- PANEL -->
+
+        </div><!-- /CHARACTER SHEET -->
+
+        <!-- CHARACTER SHEET -->
+        <div class="col-md-4">
+          <div class="panel panel-default">
+
+            <div class="panel-heading">
+              <h3 class="panel-title pull-left">Samurox</h3>
+              <span class="badge badge-primary pull-right">Nv. 2</span>
+              <div style="clear: both"></div>
+            </div><!-- PANEL HEADING -->
+
+            <div class="panel-body">
+
+              <div class="row" style="margin-bottom:20px;">
+
+                <div class="col-xs-4" style="">
+                  <b>Physique</b><br>
+                  <div class="input-group spinner">
+                    <input type="text" class="form-control" value="50" min="10" max="90" readonly style="background-color: white;">
+                    <div class="input-group-btn-vertical">
+                      <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                      <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-4" style="">
+                  <b>Mental</b><br>
+                  <div class="input-group spinner">
+                    <input type="text" class="form-control" value="50" min="10" max="90" readonly style="background-color: white;">
+                    <div class="input-group-btn-vertical">
+                      <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                      <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-4" style="">
+                  <b>Social</b><br>
+                  <div class="input-group spinner">
+                    <input type="text" class="form-control" value="50" min="10" max="90" readonly style="background-color: white;">
+                    <div class="input-group-btn-vertical">
+                      <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                      <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- ROW HEALTH AND PSY POINTS -->
+              <div class="row">
+
+                <!-- HEALTH POINTS AND BAR -->
+                <div class="col-xs-6" style="text-align: left;">
+                  <b>Points de Vie</b>
+                  <div class="progress" style="margin-bottom: 5px;">
+                    <div class="progress-bar progress-bar-success" role="progressbar" style="width:70%">
+                    </div>
+                  </div>
+                  <div class="text-center">
+                  <button class="btn btn-xs pull-left"><span class="glyphicon glyphicon-minus"></span></button>
+                  10/10
+                  <button class="btn btn-xs pull-right"><span class="glyphicon glyphicon-plus"></span></button>
+                  </div>
+                </div><!-- /HEALTH POINTS AND BAR -->
+
+                <!-- HEALTH POINTS AND BAR -->
+                <div class="col-xs-6" style="text-align: left;">
+                  <b>Points de Psy</b>
+                  <div class="progress" style="margin-bottom: 5px;">
+                    <div class="progress-bar progress-bar-primary" role="progressbar" style="width:70%">
+                    </div>
+                  </div>
+                  <div class="text-center">
+                  <button class="btn btn-xs pull-left"><span class="glyphicon glyphicon-minus"></span></button>
+                  10/10
+                  <button class="btn btn-xs pull-right"><span class="glyphicon glyphicon-plus"></span></button>
+                  </div>
+                </div><!-- /HEALTH POINTS AND BAR -->
+
+              </div><!-- /ROW HEALTH AND PSY POINTS -->
+
+            </div><!-- PANEL BODY -->
 
           </div><!-- PANEL -->
 
