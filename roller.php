@@ -52,7 +52,7 @@
 
           <div class="col-xs-12">
             <label>Résultat</label>
-            <textarea style="resize: none;" rows="15" class="form-control"></textarea>
+            <textarea style="resize: none;" rows="15" class="form-control" id="resultat"></textarea>
           </div>
 
         </div>
@@ -67,10 +67,16 @@
         d_mod = $('#d_mod').val();
         roll_nb = $('#roll_nb').val();
 
-        result = getRandomInt(1, d_faces);
+        result = 0;
+        result_str = "";
 
-        console.log(result);
-        
+        for(i=0; i<d_nb; i++) {
+          tmp = getRandomInt(1, d_faces);
+          result += tmp;
+          result_str += '' + tmp + ' + ';
+        }
+
+        $('#resultat').append(result_str.substring(0, result_str.length - 2) + ' = ' + result + '\n');
       });
 
       function getRandomInt(min, max) {
