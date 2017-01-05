@@ -7,6 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/<?= $_GET['p'] ?? "" ?>/bootstrap.min.css">
 
     <!-- Website Font style -->
 	    <link rel="stylesheet" href="assets/font_awesome/css/font-awesome.min.css">
@@ -88,7 +89,7 @@
 
           <!-- RESULT FRAME -->
           <div class="col-xs-12">
-            <label>Résultat</label>
+            <label>Résultat</label><span onclick="reset_log()" style="cursor: pointer" class="label label-danger pull-right"><span class="glyphicon glyphicon-remove"></span> Effacer</span>
             <textarea style="resize: none;" rows="15" class="form-control" id="resultat"></textarea>
           </div><!-- RESULT FRAME -->
 
@@ -99,6 +100,13 @@
     </div><!-- container -->
 
     <script type="text/javascript">
+
+      //==================================================================
+      // RESETTING RESULT TEXTAREA
+      //==================================================================
+      function reset_log() {
+        $('#resultat').html('');
+      }
 
       //==================================================================
       // WHEN CLICKING ON ANY DICE BUTTON
@@ -215,7 +223,15 @@
 
         //Displaying roll detail and result in the textarea (8 + 2 + 5 + 1 - 3 = 13)
         $('#resultat').append(result_str + '\n');
-      };
+
+        //Setting result textarea in a variable
+        var result_log = $('#resultat');
+
+        //If there is something in the textarea
+        if(result_log.length)
+           //Scrolling to the bottom of the textarea to display latest rolls
+           result_log.scrollTop(result_log[0].scrollHeight - result_log.height());
+          };
 
       //==================================================================
       // GENERATES A RANDOM INTEGER BETWEEN min AND max
