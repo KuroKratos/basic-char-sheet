@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mc-JDR</title>
+    <title>Simple Roll</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 
     <!-- Website Font style -->
@@ -21,7 +21,7 @@
   <body style="height: 100%; margin:0; padding:0;">
     <div class="container" style="">
       <div class="row">
-        <h2 class="text-center">Simple Dice Roller</h2>
+        <h2 class="text-center">Simple Roll</h2>
         <div class="well col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 
           <div class="col-sm-4">
@@ -39,7 +39,7 @@
             <input type="number" class="form-control" value="1" id="roll_nb">
           </div>
 
-          <div class="col-sm-12 btn-group btn-group-justified" style="margin:10px 0;">
+          <div class="col-sm-12 btn-group btn-group-justified hidden-xs" style="margin:10px 0;">
             <a name="roll" id="3" class="btn btn-default">D3</a>
             <a name="roll" id="4" class="btn btn-default">D4</a>
             <a name="roll" id="6" class="btn btn-default">D6</a>
@@ -48,6 +48,19 @@
             <a name="roll" id="12" class="btn btn-default">D12</a>
             <a name="roll" id="20" class="btn btn-default">D20</a>
             <a name="roll" id="100" class="btn btn-default">D100</a>
+          </div>
+
+          <div class="col-sm-12 btn-group btn-group-justified visible-xs" style="margin:10px 0;">
+            <a name="roll" id="3" class="btn btn-default col-xs-3">D3</a>
+            <a name="roll" id="4" class="btn btn-default col-xs-3">D4</a>
+            <a name="roll" id="6" class="btn btn-default col-xs-3">D6</a>
+            <a name="roll" id="8" class="btn btn-default col-xs-3">D8</a>
+          </div>
+          <div class="col-sm-12 btn-group btn-group-justified visible-xs" style="margin:10px 0;">
+            <a name="roll" id="10" class="btn btn-default col-xs-3">D10</a>
+            <a name="roll" id="12" class="btn btn-default col-xs-3">D12</a>
+            <a name="roll" id="20" class="btn btn-default col-xs-3">D20</a>
+            <a name="roll" id="100" class="btn btn-default col-xs-3">D100</a>
           </div>
 
           <div class="col-sm-12" style="margin-bottom: 10px;">
@@ -66,7 +79,7 @@
             <label>Résultat</label>
             <textarea style="resize: none;" rows="15" class="form-control" id="resultat"></textarea>
           </div>
-
+          <div style="clear:both"></div>
         </div>
       </div>
     </div>
