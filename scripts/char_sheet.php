@@ -1,8 +1,9 @@
+<!-- DESCRIPTION DU PERSONNAGE -->
 <div class="row">
   <div class="jumbotron" style="padding-top: 10px; padding-bottom: 10px; border-radius: 0;">
 
     <div class="hidden-xs hidden-sm col-md-2">
-      <img class="img-thumbnail" src="assets/images/orc.jpg" alt="" style="width: 142px;">
+      <img class="img-thumbnail" src="" alt="" style="width: 142px;" ID="char_img">
     </div>
 
     <div class="form-horizontal col-sm-12 col-md-10">
@@ -50,72 +51,74 @@
   </div>
 </div>
 
+<!-- STATS PRINCIPALES -->
+<div class="col-sm-5 col-md-4 col-lg-3">
+  <div class="panel panel-default">
+    <div class="panel-heading"><h3 class="panel-title">Statistiques principales</h3></div>
+    <div class="panel-body form-inline" id="main-stats">
 
-
-  <div class="col-sm-5 col-md-4 col-lg-3">
-    <div class="panel panel-default">
-      <div class="panel-heading"><h3 class="panel-title">Statistiques principales</h3></div>
-      <div class="panel-body form-inline" id="main-stats">
-
-        <div class="col-xs-4">
-          <label><small>FOR</small></label> <input type="text" class="form-control" style="width: 50%" id="val_for">
-        </div>
-        <div class="col-xs-4">
-          <label><small>DEX</small></label> <input type="text" class="form-control" style="width: 50%" id="val_dex">
-        </div>
-        <div class="col-xs-4">
-          <label><small>INT</small></label> <input type="text" class="form-control" style="width: 50%" id="val_int">
-        </div>
-
-        <div class="col-xs-4">
-          <label><small>CON</small></label> <input type="text" class="form-control" style="width: 50%" id="val_con">
-        </div>
-        <div class="col-xs-4">
-          <label><small>APP</small></label> <input type="text" class="form-control" style="width: 50%" id="val_app">
-        </div>
-        <div class="col-xs-4">
-          <label><small>POU</small></label> <input type="text" class="form-control" style="width: 50%" id="val_pou">
-        </div>
-
-        <div class="col-xs-4">
-          <label><small>TAI</small></label> <input type="text" class="form-control" style="width: 50%" id="val_tai">
-        </div>
-
-        <div class="clearfix"></div>
+      <div class="col-xs-4">
+        <label><small>FOR</small></label> <input type="text" class="form-control" style="width: 50%" id="val_for">
       </div>
+      <div class="col-xs-4">
+        <label><small>DEX</small></label> <input type="text" class="form-control" style="width: 50%" id="val_dex">
+      </div>
+      <div class="col-xs-4">
+        <label><small>INT</small></label> <input type="text" class="form-control" style="width: 50%" id="val_int">
+      </div>
+
+      <div class="col-xs-4">
+        <label><small>CON</small></label> <input type="text" class="form-control" style="width: 50%" id="val_con">
+      </div>
+      <div class="col-xs-4">
+        <label><small>APP</small></label> <input type="text" class="form-control" style="width: 50%" id="val_app">
+      </div>
+      <div class="col-xs-4">
+        <label><small>POU</small></label> <input type="text" class="form-control" style="width: 50%" id="val_pou">
+      </div>
+
+      <div class="col-xs-4">
+        <label><small>TAI</small></label> <input type="text" class="form-control" style="width: 50%" id="val_tai">
+      </div>
+
+      <div class="clearfix"></div>
     </div>
   </div>
+</div>
 
-  <div class="col-sm-5 col-md-4 col-lg-3">
-    <div class="panel panel-default">
-      <div class="panel-heading"><h3 class="panel-title">Statistiques dérivées</h3></div>
-      <div class="panel-body form-inline" id="main-stats">
+<!-- STATS DÉRIVÉES -->
+<div class="col-sm-5 col-md-4 col-lg-3">
+  <div class="panel panel-default">
+    <div class="panel-heading"><h3 class="panel-title">Statistiques dérivées</h3></div>
+    <div class="panel-body form-inline" id="main-stats">
 
-        <div class="col-xs-6">
-          <label><small>PV</small></label> <input type="text" class="form-control" style="width: 50%" id="val_pv">
-        </div>
-        <div class="col-xs-6">
-          <label><small>PM</small></label> <input type="text" class="form-control" style="width: 50%" id="val_pm">
-        </div>
-
-        <div class="col-xs-6">
-          <label><small>Idée</small></label> <input type="text" class="form-control" style="width: 50%" id="val_idee">
-        </div>
-        <div class="col-xs-6">
-          <label><small>Chance</small></label> <input type="text" class="form-control" style="width: 50%" id="val_chance">
-        </div>
-
-        <div class="col-xs-12">
-          <label><small>Bonus aux dégats</small></label> <input type="text" class="form-control" style="width: 50%" id="val_bd">
-        </div>
-
-        <div class="clearfix"></div>
+      <div class="col-xs-6">
+        <label><small>PV</small></label> <input type="text" class="form-control" style="width: 50%" id="val_pv">
       </div>
+      <div class="col-xs-6">
+        <label><small>PM</small></label> <input type="text" class="form-control" style="width: 50%" id="val_pm">
+      </div>
+
+      <div class="col-xs-6">
+        <label><small>Idée</small></label> <input type="text" class="form-control" style="width: 50%" id="val_idee">
+      </div>
+      <div class="col-xs-6">
+        <label><small>Chance</small></label> <input type="text" class="form-control" style="width: 50%" id="val_chance">
+      </div>
+
+      <div class="col-xs-12">
+        <label><small>Bonus aux dégats</small></label> <input type="text" class="form-control" style="width: 50%" id="val_bd">
+      </div>
+
+      <div class="clearfix"></div>
     </div>
   </div>
+</div>
 
-  <?php require_once('scripts/roller.php'); ?>
+<?php require_once('scripts/roller.php'); ?>
 
+<div class="col-md-8 col-lg-6">
+</div>
 
 <script type="text/javascript">
   
@@ -157,6 +160,8 @@
     $('#val_dex').val(s.dex);
     $('#val_int').val(s.int);
     $('#val_pou').val(s.pou);
+
+    $('#char_img').attr('src',c.photo);
 
   }
 

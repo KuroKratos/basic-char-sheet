@@ -1,3 +1,7 @@
+body {
+  background-color: #f2f2f2;
+}
+
 .form-control {
   background: none;
   border:none;
@@ -7,12 +11,20 @@
   padding:0;
 }
 
+#txt_custom_roll {
+  border: 1px solid lightgray;
+}
+
 .form-control:focus {
   box-shadow: none;
 }
 
+.jumbotron {
+  background-color: #e0e0e0;
+  box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.4);
+}
+
 .jumbotron, .panel {
-  /*background-image: url('images/Light-Parchment-Texture.jpg');*/
   box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.4);
 }
 

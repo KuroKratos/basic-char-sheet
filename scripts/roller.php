@@ -1,6 +1,6 @@
     <script src="assets/rpg_dice_roller/dice-roller.js" type="text/javascript"></script>
 
-    <div class="col-md-4 pull-right" style="font-size: 11px;">
+    <div class="col-md-4 pull-right roller" style="font-size: 11px;">
         <div class="panel panel-info">
           <div class="panel-heading"><h3 class="panel-title">Jets de dés</h3></div>
           <div id="form" class="panel-body">
