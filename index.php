@@ -18,6 +18,8 @@
     <!-- Website Font style -->
     <link rel="stylesheet" href="assets/font_awesome/css/font-awesome.min.css">
 
+    <link rel="stylesheet" href="assets/char_sheet.css">
+
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
@@ -59,26 +61,17 @@
 
   <body style="height: 100%; margin:0; padding:0;">
 
-    <div class="page-header">
+    <!--<div class="page-header">
       <h1 style="text-align: center;">
         <img src="logo.jpg" alt="" style="height:70px; magin:0; padding:0;">
         [J-D20-R]<small class="hidden-xs"> Le JDR dans son plus simple appareil</small>
       </h1>
-    </div>
+    </div>-->
 
-    <div class="container">
-      <?php
-        $char = $_GET['char'] ?? null;
+    <div class="container-fluid">
 
-        if(!empty($char)) {
-          require_once 'scripts/char_sheet.php';
-          require_once 'scripts/log_panel.php';
-        } else if(isset($_GET['p']) && file_exists('scripts/'.$_GET['p'].'.php')) {
-          require_once 'scripts/'.$_GET['p'].'.php';
-        } else {
-          require_once 'scripts/login.php';
-        }
-      ?>
+          <?php require_once 'scripts/char_sheet.php'; ?>
+
     </div><!-- CONTAINER -->
 
   </body>
