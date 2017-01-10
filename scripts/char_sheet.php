@@ -23,17 +23,17 @@
 
       </div>
 
-      <div class="row" style="margin-top: 20px;">
+      <div class="row col-sm-4 pull-right" style="margin-top: 20px;">
 
-        <div class="col-xs-4 col-sm-2 col-md-1 pull-right">
+        <div class="col-xs-4 col-sm-4 pull-right">
           <input type="text" class="form-control text-center" placeholder="Sexe"  tabindex="6" id="val_sexe">
         </div>
 
-        <div class="col-xs-4 col-sm-2 col-md-1 pull-right">
+        <div class="col-xs-4 col-sm-4 pull-right">
           <input type="text" class="form-control text-center" placeholder="Age"  tabindex="5" id="val_age">
         </div>
 
-        <div class="col-xs-4 col-sm-2 col-md-1 pull-right">
+        <div class="col-xs-4 col-sm-4 pull-right">
           <input type="text" class="form-control text-center" placeholder="Taille"  tabindex="4" id="val_taille">
         </div>
 
@@ -50,7 +50,7 @@
   </div>
 </div>
 
-<div class="row">
+
 
   <div class="col-sm-5 col-md-4 col-lg-3">
     <div class="panel panel-default">
@@ -114,7 +114,8 @@
     </div>
   </div>
 
-</div>
+  <?php require_once('scripts/roller.php'); ?>
+
 
 <script type="text/javascript">
   
