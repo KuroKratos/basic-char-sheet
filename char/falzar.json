@@ -1,0 +1,21 @@
+{
+  "character": {
+    "name": "Falzar",
+    "job": "Barbare",
+    "race": "Orc",
+    "height": "2m32",
+    "age": "30 ans",
+    "sex": "M",
+    "desc": "Moi taper, toi payer, lui pas parler.",
+    "stats": {
+      "for": "18",
+      "tai": "16",
+      "con": "14",
+      "app": "9",
+      "dex": "12",
+      "int": "8",
+      "pou": "10"
+    },
+    "photo": "http://placehold.it/132x132"
+  }
+}
