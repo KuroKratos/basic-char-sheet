@@ -121,29 +121,42 @@
 </div>
 
 <script type="text/javascript">
-  
+
+  //================================================================================================
+  // AU CHARGEMENT DE LA PAGE
+  //================================================================================================
   $(document).ready(function () {
-    
+
+    // RÉCUPÉRATION DU FICHIER JSON DU PERSONNAGE
     $.ajax({
       url: 'char/falzar.json',
       dataType: 'json',
       success: function(c){
         var s = c.character.stats;
+
+        // APPEL DE LA FONCTION DE REMPLISSAGE DE LA FEUILLE
         fillSheet(c);
+
+        // APPEL DE LA FONCTION DE CALCUL DES STATS DÉRIVÉES
         genStats(s.for, s.dex, s.int, s.con, s.app, s.pou, s.tai);
       },
       error: function(e, d, l){
-        console.log(e);
+        console.log(e); // GESTION D'ERREUR EN CAS DE PROBLÈME DE CHARGEMENT
       }
     });
     
   });
 
+  //================================================================================================
+  // RÉCUPÉRATION DE L'OBJET JSON DU PERSONNAGE ET SAISIE DANS LES CHAMPS DE LA FEUILLE
+  //================================================================================================
   function fillSheet(p) {
-    console.log(p.character);
+
+    console.log(p.character); // DEBUG
 
     c = p.character;
 
+    // SAISIE DES INFOS DE PERSONNAGES DANS LES INPUTS ASSOCIÉS
     $('#val_nom').val(c.name);
     $('#val_job').val(c.job);
     $('#val_race').val(c.race);
@@ -152,6 +165,7 @@
     $('#val_sexe').val(c.sex);
     $('#val_desc').val(c.desc);
 
+    // SAISIE DES STATS PRINCIPALES DANS LES INPUTS ASSOCIÉS
     var s = c.stats;
     $('#val_for').val(s.for);
     $('#val_tai').val(s.tai);
@@ -161,20 +175,25 @@
     $('#val_int').val(s.int);
     $('#val_pou').val(s.pou);
 
+    // AJOUT DU PORTRAIT DU PERSONNAGE
     $('#char_img').attr('src',c.photo);
 
   }
 
+  //================================================================================================
+  // GÉNÈRE LES STATS DÉRIVÉES DEPUIS LES STATS PRINCIPALES
+  //================================================================================================
   function genStats(forc, dex, int, con, app, pou, tai) {
 
-    var pv = Math.ceil((parseInt(tai) + parseInt(con)) /2);
-    var pm = pou;
-    var idee = int*5;
-    var chance = pou*5;
+    var pv = Math.ceil((parseInt(tai) + parseInt(con)) /2); // PV = (CON + TAI) / 2
+    var pm = pou; // PM = POU
+    var idee = int*5; // Jet d'idée = INT x 5
+    var chance = pou*5; // Jet de chance = POU x 5
 
-    var bd_test = parseInt(tai) + parseInt(forc);
+    var bd_test = parseInt(tai) + parseInt(forc); // TAI + FOR pour tester le jet de bonus aux dégats
     var bonus_dommage = "";
 
+    // Test du bonus aux dégats
     if (bd_test >= 25 && bd_test <= 32) {
       bonus_dommage = "+1d4";
     }
@@ -188,6 +207,7 @@
       bonus_dommage = "AUCUN";
     }
 
+    // SAISIE DES VALEURS DES STATS DÉRIVÉES DANS LES INPUTS ASSOCIÉS
     $('#val_pv').val(pv);
     $('#val_pm').val(pm);
     $('#val_idee').val(idee);
