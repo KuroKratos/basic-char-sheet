@@ -51,8 +51,9 @@
   </div>
 </div>
 
+<div class="col-xs-12 col-md-8">
 <!-- STATS PRINCIPALES -->
-<div class="col-sm-5 col-md-4 col-lg-3">
+<div class="col-xs-12 col-sm-6">
   <div class="panel panel-default">
     <div class="panel-heading"><h3 class="panel-title">Statistiques principales</h3></div>
     <div class="panel-body form-inline" id="main-stats">
@@ -87,7 +88,7 @@
 </div>
 
 <!-- STATS DÉRIVÉES -->
-<div class="col-sm-5 col-md-4 col-lg-3">
+<div class="col-xs-12 col-sm-6">
   <div class="panel panel-default">
     <div class="panel-heading"><h3 class="panel-title">Statistiques dérivées</h3></div>
     <div class="panel-body form-inline" id="main-stats">
@@ -107,12 +108,34 @@
       </div>
 
       <div class="col-xs-12">
-        <label><small>Bonus aux dégats</small></label> <input type="text" class="form-control" style="width: 50%" id="val_bd">
+        <label style="width: 50%;"><small>Bonus aux dégats</small></label><input type="text" class="form-control" id="val_bd">
       </div>
 
       <div class="clearfix"></div>
     </div>
   </div>
+</div>
+
+<!-- COMPÉTENCES -->
+<div class="col-xs-12">
+  <div class="panel panel-default">
+    <div class="panel-heading"><h3 class="panel-title">Table des compétences</h3></div>
+    <table class="table table-fixed table-striped table-responsive table-condensed table-hover">
+
+      <thead>
+        <th class="col-xs-8">Compétence</th>
+        <th class="col-xs-2 text-center">% base</th>
+        <th class="col-xs-2 text-center">% actuel</th>
+      </thead>
+
+      <tbody id="comp-list" class="form-inline">
+
+      </tbody>
+
+    </table>
+  </div>
+</div>
+
 </div>
 
 <?php require_once('scripts/roller.php'); ?>
@@ -139,6 +162,27 @@
 
         // APPEL DE LA FONCTION DE CALCUL DES STATS DÉRIVÉES
         genStats(s.for, s.dex, s.int, s.con, s.app, s.pou, s.tai);
+      },
+      error: function(e, d, l){
+        console.log(e); // GESTION D'ERREUR EN CAS DE PROBLÈME DE CHARGEMENT
+      }
+    });
+
+    // RÉCUPÉRATION DU FICHIER JSON DE LA LISTE DES COMPETENCES
+    $.ajax({
+      url: 'assets/competences.json',
+      dataType: 'json',
+      success: function(c){
+        $.each(c, function (i, v) {
+          $('#comp-list').append(
+                   "<tr>"
+                    +"<td class='col-xs-8'><input type='checkbox'> " + i + "</td>"
+                    +"<td class='col-xs-2 text-center'>" + v.base + "%</td>"
+                    +"<td class='col-xs-2 text-center'>"
+                      +"<input type='text' class='form-control' style='width:20px; height:22px;'>%"
+                    +"</td>"
+                  +"</tr>");
+          });
       },
       error: function(e, d, l){
         console.log(e); // GESTION D'ERREUR EN CAS DE PROBLÈME DE CHARGEMENT
