@@ -28,6 +28,25 @@
 
     <!-- CUSTOMIZIND SCROLLBAR FOR BROWSERS WHICH SUPPORTS IT -->
     <style type="text/css">
+
+      html, body {
+        height: 100%;
+      }
+
+      body {
+        background: url('assets/images/bg.jpg') no-repeat center center fixed;
+        background-size: cover;
+        min-height: 100%;
+      }
+      
+      .jumbotron {
+        background-color: rgba(255,255,255,0.8);
+      }
+
+      /*=============================================================*/
+      /* CUSTOM SCROLLBRAR FOR COMPATBILE BROWSERS                   */
+      /*=============================================================*/
+
       ::-webkit-scrollbar {
         width: 5px;
         height: 5px;
@@ -54,6 +73,32 @@
       }
       ::-webkit-scrollbar-corner {
         background: transparent;
+      }
+
+      /*=============================================================*/
+      /* TABLE FIXED HEADER                                          */
+      /*=============================================================*/
+      .table-fixed {
+        width: 100%;
+        background-color: #fff;
+      }
+
+      .table-fixed tbody {
+        height: 200px;
+        overflow-y: auto;
+        width: 100%;
+      }
+
+      .table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td, .table-fixed th {
+        display: block;
+      }
+
+      .table-fixed tbody td {
+        float: left;
+      }
+      
+      .table-fixed thead tr th {
+        float: left;
       }
     </style>
 

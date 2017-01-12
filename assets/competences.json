@@ -1,0 +1,14 @@
+{
+    "Alchimie" :            { "base" :  0 },
+    "Art/Artisanat" :       { "base" :  0 },
+    "Art de la Guerre" :    { "base" :  0 },
+    "Chercher" :            { "base" : 20 },
+    "Commandement" :        { "base" : 20 },
+    "Conduite d'attelage" : { "base" : 20 },
+    "Connais. Nature" :     { "base" : 10 },
+    "Connais. Peuples" :    { "base" : 20 },
+    "Connais. Religion" :   { "base" : 10 },
+    "Crocheter" :           { "base" : 10 },
+    "Déguisement" :         { "base" : 10 },
+    "Démolition" :          { "base" :  0 }
+}
