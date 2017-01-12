@@ -2,7 +2,7 @@
 <script src="assets/rpg_dice_roller/dice-roller.js" type="text/javascript"></script>
 
 <div class="col-md-4 pull-right roller" style="font-size: 11px;">
-  <div class="panel panel-info">
+  <div class="panel panel-default">
     <div class="panel-heading"><h3 class="panel-title">Jets de dés</h3></div>
     <div id="form" class="panel-body">
 
@@ -60,14 +60,13 @@
     <div class="col-xs-12">
       <label>Résultat</label><span onclick="reset_log()" style="cursor: pointer" class="label label-danger pull-right"><span class="glyphicon glyphicon-remove"></span> Effacer</span>
 
-      <div id="result_div" style="height:200px; overflow-y: auto;">
-        <table class="table table-striped table-hover table-bordered" style="margin-bottom:0;">
+        <table class="table table-fixed table-striped" style="margin-bottom:0;">
           <thead>
             <tr>
-              <th style="width: 72px;">Heure</th>
-              <th>Jet</th>
-              <th>Détail</th>
-              <th style="width: 72px;">Résultat</th>
+              <th class="col-xs-2">Heure</th>
+              <th class="col-xs-4">Jet</th>
+              <th class="col-xs-4">Détail</th>
+              <th class="col-xs-2">Résultat</th>
             </tr>
           </thead>
 
@@ -75,7 +74,7 @@
 
           </tbody>
         </table>
-      </div>
+
     </div><!-- RESULT FRAME -->
 
     <div style="clear:both"></div>
@@ -137,7 +136,13 @@
       // If desired roll is legal for the script
       if(latestRoll.toString().split(':')[1] != " No dice rolled") {
         // Displaying roll details etc. in the table as a new row
-        $('#resultat').append("<tr><td>" + timetext + "</td><td>" + resultRoll + "</td><td>" + resultDetail + "</td><td>" + resultValue + "</td></tr>");
+        $('#resultat').append(
+                   "<tr>"
+                    +"<td class='col-xs-2'>" + timetext + "</td>"
+                    +"<td class='col-xs-4'>" + resultRoll + "</td>"
+                    +"<td class='col-xs-4'>" + resultDetail + "</td>"
+                    +"<td class='col-xs-2'>" + resultValue + "</td>"
+                  +"</tr>");
         // Scrolling down the table div to keep focus on latest roll
         scrollDownResult();
       }
@@ -148,7 +153,7 @@
   // Scrolling down the table div to keep focus on latest roll
   //==================================================================
   function scrollDownResult() {
-    $('#result_div').scrollTop($('#result_div')[0].scrollHeight);
+    $('#resultat').scrollTop($('#resultat')[0].scrollHeight);
   }
 
   //==================================================================
@@ -166,7 +171,7 @@
     for(i=0; i<roll_nb; i++) {
       //Calling roll function with custom input value converted to lower case (because of splitting 'D' in roll)
 
-      diceRoller.roll($('#txt_custom_roll').val().toLowerCase());
+      diceRoller.roll($('#txt_custom_roll').val());
       //Get the latest dice rolls from the log
       var latestRoll  = diceRoller.getLog().shift();
 
@@ -193,7 +198,13 @@
       // If desired roll is legal for the script
       if(latestRoll.toString().split(':')[1] != " No dice rolled") {
         // Displaying roll details etc. in the table as a new row
-        $('#resultat').append("<tr><td>" + timetext + "</td><td>" + resultRoll + "</td><td>" + resultDetail + "</td><td>" + resultValue + "</td></tr>");
+        $('#resultat').append(
+                   "<tr>"
+                    +"<td class='col-xs-2'>" + timetext + "</td>"
+                    +"<td class='col-xs-4'>" + resultRoll + "</td>"
+                    +"<td class='col-xs-4'>" + resultDetail + "</td>"
+                    +"<td class='col-xs-2'>" + resultValue + "</td>"
+                  +"</tr>");
         // Scrolling down the table div to keep focus on latest roll
         scrollDownResult();
       }
