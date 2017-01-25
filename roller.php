@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/slate/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/simplex/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
 
     <!-- Website Font style -->
@@ -105,8 +105,8 @@
           <div class="col-xs-12">
             <label>Résultat</label><span onclick="reset_log()" style="cursor: pointer" class="label label-danger pull-right"><span class="glyphicon glyphicon-remove"></span> Effacer</span>
               
-            <div id="result_div" style="height:200px; overflow-y: auto;">
-              <table class="table" style="margin-bottom:0;">
+            <div id="result_div">
+              <table class="table" style="margin-bottom:0;" id="result_table">
                 <thead>
                   <tr>
                     <th style="width: 72px;">Heure</th>
@@ -134,6 +134,16 @@
       //==================================================================
       // ON DOCUMENT READY
       //==================================================================
+      $(document).ready(function () {
+        $('#result_table').dataTable({
+          paging:         false,
+          info:           false,
+          filter:         false,
+          sort:           false,
+          scrollY:        '200px',
+          scrollCollapse: true
+        });
+      });
 
       //==================================================================
       // RESETTING RESULT TEXTAREA
@@ -196,7 +206,7 @@
       });
 
       function scrollDownResult() {
-        $('#result_div').scrollTop($('#result_div')[0].scrollHeight);
+        $('.dataTables_scrollBody:first').scrollTop($('.dataTables_scrollBody:first')[0].scrollHeight);
       }
 
       //==================================================================
